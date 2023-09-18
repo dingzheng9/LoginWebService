@@ -20,15 +20,17 @@ To run this project locally on command prompt or a console, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/demo-login-service.git
+   git clone https://github.com/dingzheng9/LoginWebService.git
 
    ```
 
 2. Navigate to the project directory:
+
    ```bash
    cd demo-login-service
 
    ```
+
 3. Build and run the application:
    ```bash
    ./mvnw spring-boot:run
@@ -39,7 +41,7 @@ To run this project locally on Eclipse, follow these steps:
 1. **Clone the Repository:** Start by cloning this Git repository to your local machine. You can do this using the following command:
 
    ```
-   git clone https://github.com/your-username/your-project.git
+   git clone https://github.com/dingzheng9/LoginWebService.git
    ```
 
 2. **Open Eclipse:** Launch Eclipse IDE on your computer.
