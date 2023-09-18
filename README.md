@@ -158,3 +158,14 @@ If you encounter error during database initialization, please follow the steps b
 8. Subsequently, open `src/main/resources/data.sql`, copy, paste and run the query.
 9. By running the select statement, you will see 3 users.
 10. Database Initialization Completed.
+
+## Database Access (H2 Console)
+
+```bash
+Driver Class: org.h2.Driver
+JDBC URL: jdbc:h2:mem:testdb
+User Name: sa
+Password:
+```
+
+Click `Connect`
