@@ -1,6 +1,6 @@
 # demo-login-service
 
-![Eclipse Public License 2.0](epl_license_logo.png)
+[![License](https://img.shields.io/badge/license-EPL-blue.svg)](LICENSE)
 
 ## Description
 
