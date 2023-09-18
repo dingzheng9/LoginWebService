@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: dingzheng
+Build-Jdk: 17.0.8.1
+Implementation-Title: demo-login-service
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.interviewco.login
+Implementation-URL: https://spring.io/projects/spring-boot/demo-login-se
+ rvice
+Created-By: Maven Integration for Eclipse
+
