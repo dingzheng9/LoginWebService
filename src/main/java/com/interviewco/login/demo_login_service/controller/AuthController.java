@@ -51,7 +51,7 @@ public class AuthController {
                     UserDetailsImpl userDetailsImpl = (UserDetailsImpl) userDetails;
 //                    System.out.println("LOG:userDetailsImpl:" + userDetailsImpl);
                     String jwtToken = jwtUtil.generateToken(userDetailsImpl);
-                    System.out.println("LOGjwtToken:" + jwtToken);
+//                    System.out.println("LOGjwtToken:" + jwtToken);
 
                     // Return the JWT token in the response
                     JwtResponse jwtResponse = new JwtResponse(jwtToken, userDetailsImpl.getUsername(), userDetailsImpl.getRole(), userDetailsImpl.getName());

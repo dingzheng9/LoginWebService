@@ -2,6 +2,9 @@ package com.interviewco.login.demo_login_service.config;
 
 import com.interviewco.login.demo_login_service.filters.JwtRequestFilter;
 import com.interviewco.login.demo_login_service.service.CustomUserDetailsService;
+
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +23,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-// Configures Spring Security.
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -40,8 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-        	.cors()
-        	.and()
+            .cors() // Enable CORS
+            .and()
             .csrf().disable()
             .authorizeRequests()
                 .antMatchers("/api/user/login").permitAll()
@@ -61,7 +63,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().frameOptions().disable();
     }
 
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoder());
@@ -71,19 +72,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-    
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.addAllowedOrigin("*"); // Allow all origins
-        configuration.addAllowedMethod("*"); // Allow all HTTP methods
-        configuration.addAllowedHeader("*"); // Allow all headers
-        configuration.setAllowCredentials(true); // Allow cookies/authentication headers
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000")); // Add any other origins as needed
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowCredentials(true);
+        configuration.addAllowedHeader("*"); // You can customize this to allow specific headers
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration); // Apply this configuration to all paths
+        source.registerCorsConfiguration("/**", configuration);
 
         return source;
     }
-
 }
