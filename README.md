@@ -129,6 +129,9 @@ This login service does not include a user registration feature, so passwords ha
     username: `dz`
     password: `123qwe`
 
+    username: `乐乐`
+    password: `password`
+
 ## Database Initialization
 
 To initialize the database with sample data, the application uses SQL scripts located in the `src/main/resources` directory.
